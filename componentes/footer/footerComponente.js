@@ -13,8 +13,8 @@ export function footer() {
 
     // Enlace
     let enlace = document.createElement('a');
-    enlace.href = 'https://github.com/elmojondesatan/todo_list';  
-    enlace.textContent = '💻 GitHub';
+    enlace.href = 'https://github.com/dalunaaaa/todo-listt';  
+    enlace.textContent = 'GitHub';
     enlace.target = '_blank';
 
     // Añadir el enlace al párrafo

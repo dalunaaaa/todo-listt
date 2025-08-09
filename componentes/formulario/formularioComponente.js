@@ -54,8 +54,8 @@ export function formularioTarea() {
         console.log("📌 Nueva tarea registrada:", nuevaTarea);
 
         form.reset();
-        inputFechaAsignacion.valueAsDate = new Date(); // volver a colocar fecha actual
-        form.style.display = "none"; // opcional: ocultar tras guardar
+        inputFechaAsignacion.valueAsDate = new Date(); 
+        form.style.display = "none"; 
     });
 
     return form;

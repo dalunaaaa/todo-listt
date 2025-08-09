@@ -14,7 +14,7 @@ export function dashboard(){
             estado: "completado",
             fechaAsignacion: "17/05/2025",
             fechaEntrega: "30/07/2025",
-            integrantes: ["🧑🏻‍🎓", "👩🏼‍🎓", "👨🏽‍🎓"]
+            integrantes: ["👦", "👧"]
         },
     
         {
@@ -24,7 +24,7 @@ export function dashboard(){
             estado: "pendiente",
             fechaAsignacion: "25/07/2025",
             fechaEntrega: "05/08/2025",
-            integrantes: ["👨🏾‍🎓", "🧑🏽‍🎓"]
+            integrantes: [ "🧑🏽"]
         }
     ];
     

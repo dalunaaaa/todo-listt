@@ -1,57 +1,104 @@
 .item-tarea {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 8px 16px;
-    border-bottom: 1px solid #ddd;
-    font-family: 'Comic Sans MS', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 16px;
+  border-bottom: 1px solid #91A6FF; /* color3 */
+  font-family: 'Poppins', sans-serif;
+  color: #2F3E55; /* color5 */
+  background-color: white;
+  transition: background-color 0.3s ease;
 }
-
-.tarea-numero {
-    border: 1px solid black;
+  
+  .item-tarea:hover {
+    background-color: #F0F4FF;
+  }
+  
+  .tarea-numero {
+    border: 1px solid #7689FF; /* color4 */
     border-radius: 4px;
     padding: 4px 8px;
-}
-
-.tarea-titulo {
+    color: #7689FF;
+    font-weight: 600;
+    min-width: 28px;
+    text-align: center;
+  }
+  
+  .tarea-titulo {
     flex-grow: 1;
     margin: 0 10px;
-}
-
-.tarea-estado {
+    color: #2F3E55; /* color5 */
+    font-weight: 600;
+  }
+  
+  .tarea-estado {
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 0.9em;
-}
-
-.tarea-estado-completado {
-    background-color: #b9f6ca;
-    color: #0c4b33;
-    border: 1px solid #65c18c;
-}
-
-.tarea-fecha-asignacion,
-.tarea-fecha-entrega {
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .tarea-estado-completado {
+    background-color: #7689FF; /* color4 */
+    color: white;
+    border: 1px solid #617A9B; /* color2 */
+  }
+  
+  .tarea-fecha-asignacion,
+  .tarea-fecha-entrega {
     font-size: 0.85em;
-    color: #444;
-}
-
-.tarea-integrantes {
+    justify-content: center;
+    align-items: center;
+    color: #617A9B; /* color2 */
+  }
+  
+  .tarea-integrantes {
     display: flex;
     gap: 5px;
-}
-
-.tarea-integrante {
-    border: 1px solid #ccc;
+  }
+  
+  .tarea-integrante {
+    border: 1px solid #91A6FF; /* color3 */
     border-radius: 50%;
     padding: 4px;
     font-size: 1.2em;
-}
-
-.tarea-eliminar {
+    color: #7689FF; /* color4 */
+    background-color: transparent;
+    cursor: default;
+    transition: transform 0.3s ease;
+  }
+  
+  .tarea-integrante:hover {
+    transform: scale(1.3) rotate(8deg);
+  }
+  
+  .tarea-eliminar {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1.2em;
-}
+    color: #FF6B6B;
+    transition: color 0.3s ease;
+  }
+  
+  .tarea-eliminar:hover {
+    color: #FF3B3B;
+  }
+  @media (max-width: 768px) {
+    .seccion-1{
+        
+        grid-template-columns:auto ;
+       
+    }
+    /* Estilos para todos los celulares */
+  }
+  
+  
+@media (max-width: 700px) {
+  .item-tarea {
+    display: grid;
+    grid-template-columns: 1fr;
+    }
+  }

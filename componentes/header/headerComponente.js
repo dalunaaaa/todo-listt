@@ -21,7 +21,7 @@ export function header(){
     
     let divLogoUser = document.createElement('div');
     divLogoUser.className = "div-logo-user";
-    divLogoUser.innerText = "👤";
+    divLogoUser.innerText = "🧑‍🎓";
     header.appendChild(divLogoUser);
     
     return header;

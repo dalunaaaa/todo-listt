@@ -1,72 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 .formulario-tarea {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    background: linear-gradient(145deg, #f2f9ff, #ffffff);
-    padding: 30px 25px;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* mayor separación entre campos */
-    border: 3px solid #62b4f9;
-    animation: aparecer 0.3s ease-in-out;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  background: #F5F7FA; /* color1 */
+  padding: 25px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(97, 122, 155, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1.5px solid #91A6FF; /* color3 */
+  font-family: 'Poppins', sans-serif;
+  animation: aparecer 0.4s ease;
+  overflow: visible;
+  width: auto;
+  color: #2F3E55; /* color5 */
 }
 
 @keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #617A9B; /* color2 */
 }
 
 .formulario-tarea input,
 .formulario-tarea textarea,
 .formulario-tarea select {
-    padding: 14px;
-    border-radius: 12px;
-    border: 2px solid #a6d4f8;
-    font-size: 15px;
-    background-color: #f0f8ff;
-    color: #333;
-    outline: none;
-    transition: border-color 0.3s, background-color 0.3s;
-    margin-bottom: 5px; /* separación adicional */
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1.5px solid #617A9B; /* color2 */
+  font-size: 13px;
+  background-color: white;
+  color: #2F3E55; /* color5 */
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .formulario-tarea input:focus,
 .formulario-tarea textarea:focus,
 .formulario-tarea select:focus {
-    border-color: #62b4f9;
-    background-color: #e6f4ff;
+  border-color: #7689FF; /* color4 */
+  box-shadow: 0 0 5px rgba(118, 137, 255, 0.4);
 }
 
 .formulario-tarea textarea {
-    resize: vertical;
-    min-height: 70px;
-    max-height: 140px;
+  resize: vertical;
+  min-height: 70px;
+  max-height: 130px;
 }
 
 .formulario-tarea button {
-    padding: 14px;
-    background: linear-gradient(90deg, #62b4f9, #84c6fb);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, transform 0.2s;
+  align-self: flex-end;
+  padding: 10px 18px;
+  background: #7689FF; /* color4 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  box-shadow: 0 3px 8px rgba(118, 137, 255, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .formulario-tarea button:hover {
-    background: linear-gradient(90deg, #4fa3e0, #6fbaf6);
-    transform: translateY(-2px);
+  background: #5c6fdd;
+  transform: scale(1.04);
 }

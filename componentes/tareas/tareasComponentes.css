@@ -2,3 +2,12 @@
     padding: 2rem;
 
 }
+@media (max-width: 768px) {
+    .seccion-1{
+        
+        grid-template-columns:auto ;
+       
+    }
+    /* Estilos para todos los celulares */
+  }
+  
