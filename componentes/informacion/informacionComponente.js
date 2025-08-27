@@ -25,15 +25,15 @@ export function informacion(datos) {
 
     let estado = document.createElement('span');
     estado.className = "estado";
-    estado.textContent = datos.estado;
+    estado.textContent = datos.estado_tarea || datos.estado || "pendiente"; // Manejar ambos casos
 
     let titulo = document.createElement('h3');
     titulo.className = "titulo-tarea";
-    titulo.textContent = datos.titulo;
+    titulo.textContent = datos.nombre || datos.titulo || "Sin título"; // Manejar ambos casos
 
     let descripcion = document.createElement('p');
     descripcion.className = "descripcion-tarea";
-    descripcion.textContent = datos.descripcion;
+    descripcion.textContent = datos.descripcion || "Sin descripción";
 
     let textoIntegrantes = document.createElement('p');
     textoIntegrantes.textContent = "Integrantes";
@@ -41,7 +41,9 @@ export function informacion(datos) {
     let contenedorIntegrantes = document.createElement('div');
     contenedorIntegrantes.className = "contenedor-integrantes";
 
-    datos.integrantes.forEach(integrante => {
+    // MANEJO DE INTEGRANTES - CORREGIR ESTA PARTE
+    const integrantes = datos.integrantes || []; // Array vacío por defecto
+    integrantes.forEach(integrante => {
         let span = document.createElement('span');
         span.className = "emoji-integrante";
         span.textContent = integrante;

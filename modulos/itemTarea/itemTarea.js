@@ -1,6 +1,6 @@
-export function itemTarea(indice, titulo, descripcion,estado, fechaAsignacion, fechaEntrega, listaIntegrantes) {
+export function itemTarea(indice, titulo, descripcion, estado, fechaAsignacion, fechaEntrega, listaIntegrantes) {
     let divItem = document.createElement('div');
-    divItem.className = "item-tarea"; // clase única para todo el componente
+    divItem.className = "item-tarea";
 
     // Número de la tarea
     let divNumero = document.createElement('div');
@@ -10,46 +10,42 @@ export function itemTarea(indice, titulo, descripcion,estado, fechaAsignacion, f
     // Título
     let divTitulo = document.createElement('div');
     divTitulo.className = "tarea-titulo";
-    divTitulo.textContent = titulo;
-
-    // Descripción
-    //let divDescripcion = document.createElement('div');
-    //divDescripcion.className = "tarea-descripcion";
-    //divDescripcion.textContent = descripcion;
-
+    divTitulo.textContent = titulo || "Sin título";
 
     // Estado
     let spanEstado = document.createElement('span');
     spanEstado.className = `tarea-estado tarea-estado-${estado?.toLowerCase() || "pendiente"}`;
-    spanEstado.textContent = estado;
+    spanEstado.textContent = estado || "pendiente";
 
-    // Fecha de asignación
+    // Fechas
     let fechaAsig = document.createElement('div');
     fechaAsig.className = "tarea-fecha-asignacion";
-    fechaAsig.textContent = fechaAsignacion;
+    fechaAsig.textContent = fechaAsignacion || "Sin fecha";
 
-    // Fecha de entrega
     let fechaEnt = document.createElement('div');
     fechaEnt.className = "tarea-fecha-entrega";
-    fechaEnt.textContent = fechaEntrega;
+    fechaEnt.textContent = fechaEntrega || "Sin fecha";
 
-    // Listado de integrantes (emojis o íconos)
+    // Listado de integrantes (con manejo de undefined)
     let divIntegrantes = document.createElement('div');
     divIntegrantes.className = "tarea-integrantes";
-    listaIntegrantes.forEach((emoji) => {
-        let spanEmoji = document.createElement('span');
-        spanEmoji.className = "tarea-integrante";
-        spanEmoji.textContent = emoji;
-        divIntegrantes.appendChild(spanEmoji);
-    });
+    
+    // Verificar que listaIntegrantes existe y es un array
+    if (listaIntegrantes && Array.isArray(listaIntegrantes)) {
+        listaIntegrantes.forEach((emoji) => {
+            let spanEmoji = document.createElement('span');
+            spanEmoji.className = "tarea-integrante";
+            spanEmoji.textContent = emoji;
+            divIntegrantes.appendChild(spanEmoji);
+        });
+    }
 
     // Botón eliminar
     let btnEliminar = document.createElement('button');
     btnEliminar.className = "tarea-eliminar";
     btnEliminar.textContent = "🗑️";
-    // Aquí podrías agregar el evento para eliminarlo si quieres
 
-    // Añadir todos los elementos al div principal
+    // Añadir todos los elementos
     divItem.appendChild(divNumero);
     divItem.appendChild(divTitulo);
     divItem.appendChild(spanEstado);
@@ -57,7 +53,6 @@ export function itemTarea(indice, titulo, descripcion,estado, fechaAsignacion, f
     divItem.appendChild(fechaEnt);
     divItem.appendChild(divIntegrantes);
     divItem.appendChild(btnEliminar);
-    //divItem.appendChild(divDescripcion);
 
     return divItem;
 }
